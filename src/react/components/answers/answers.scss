@@ -30,7 +30,11 @@ main.answers {
     }
   }
 
-  button {
-    @extend .btn, .btn-primary, .mt-2;
+  div.buttons {
+    @extend .d-flex, .flex-wrap, .justify-content-center, .my-2, .w-100;
+
+    button {
+      @extend .btn, .btn-primary;
+    }
   }
 }

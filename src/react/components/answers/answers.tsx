@@ -7,7 +7,21 @@ import './answers.scss';
 
 export default function Answers() {
   const answers: Answer[] = useSelector(selectAnswers);
-  const dispatch = useDispatch();
+  const [url, setUrl] = React.useState('');
+
+  React.useEffect(() => {
+    chrome.tabs.query(
+      {
+        active: true,
+        currentWindow: true,
+      },
+      function (tabs) {
+        const tab = tabs[0];
+        const url = tab.url;
+        setUrl(url || '');
+      }
+    );
+  }, []);
 
   return (
     <main className="answers">
@@ -31,25 +45,55 @@ export default function Answers() {
                 </span>
               </div>
             );
-          } else if (answer.type === QuestionType.MULTIPLE_CHOICE_MULTI_SELECT) {
+          } else if (
+            answer.type === QuestionType.MULTIPLE_CHOICE_MULTI_SELECT ||
+            answer.type === QuestionType.FILL_IN_THE_BLANK ||
+            answer.type === QuestionType.ORDERING
+          ) {
             if (typeof answer.answer !== 'object') return null;
             return (
               <div key={`answer_${index}`}>
                 <span>Type: {answer.type}</span>
                 <span>Prompt: {answer.prompt}</span>
                 <span>Answers:</span>
-                {answer.answer.map((ans, i) => (
-                  <span key={`mult_choice_ans_${i}`}>
-                    <b>{ans}</b>
-                  </span>
-                ))}
+                <ol>
+                  {answer.answer.map((ans, i) => (
+                    <li key={`mult_choice_ans_${i}`}>
+                      <b>{ans}</b>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            );
+          } else if (answer.type === QuestionType.MATCHING) {
+            if (typeof answer.answer !== 'object') return null;
+            return (
+              <div key={`answer_${index}`}>
+                <span>Type: {answer.type}</span>
+                <span>Prompt: {answer.prompt}</span>
+                <span>Answers:</span>
+                <ol>
+                  {answer.answer.map((ans, i) => (
+                    <li key={`match_choice_ans_${i}`}>
+                      {ans.question} = <b>{ans.answer}</b>
+                    </li>
+                  ))}
+                </ol>
               </div>
             );
           }
           return null;
         })}
       </section>
-      <button onClick={() => dispatch(clearAnswers())}>Clear Answers</button>
+      {!url.includes('popup.html') && !!url && (
+        <div className="buttons">
+          <button onClick={openPopup}>Open Popup</button>
+        </div>
+      )}
     </main>
   );
+
+  function openPopup() {
+    chrome.windows.create({ url: 'popup.html', type: 'popup', height: 450, width: 800 }, () => {});
+  }
 }

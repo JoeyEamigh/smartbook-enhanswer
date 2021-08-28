@@ -30,6 +30,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 async function getAnswer(url: string) {
   const data = await (await fetch(url)).json();
+  if (!data?.hidata?.payload) return;
 
   const type: QuestionType = data.type;
   const body = deobfuscateAndDecode(data.hidata.payload);
@@ -50,7 +51,69 @@ function setupAnswer(type: QuestionType, body: any): Answer {
       return handleMultiSelectMultipleChoice(body);
     case QuestionType.TRUE_FALSE:
       return handleTrueFalse(body);
+    case QuestionType.FILL_IN_THE_BLANK:
+      return handleFillInTheBlank(body);
+    case QuestionType.MATCHING:
+      return handleMatching(body);
+    case QuestionType.ORDERING:
+      return handleOrdering(body);
   }
+}
+
+function handleOrdering(body: any): Answer {
+  const { answers, choices } = body;
+  const answer = answers.map((ans) => {
+    let potentialAnswer = '';
+    choices.forEach((choice) => {
+      if (choice.key === ans) potentialAnswer = stripTags(choice.text);
+    });
+    return potentialAnswer;
+  });
+
+  return {
+    prompt: stripTags(body.prompt),
+    answer,
+    type: QuestionType.ORDERING,
+    time: new Date().toISOString(),
+  };
+}
+
+function handleMatching(body: any): Answer {
+  const { answers, choices, prompts } = body;
+  const answer = answers.map((ans) => {
+    let potentialAnswer = { question: '', answer: '' };
+    prompts.forEach((prompt) => {
+      if (prompt.key === ans.prompt) {
+        potentialAnswer.question = stripTags(prompt.content);
+      }
+    });
+    choices.forEach((choice) => {
+      if (choice.key === ans.choices[0]) {
+        potentialAnswer.answer = stripTags(choice.content);
+      }
+    });
+    return potentialAnswer;
+  });
+
+  return {
+    prompt: stripTags(body.prompt),
+    answer,
+    type: QuestionType.MATCHING,
+    time: new Date().toISOString(),
+  };
+}
+
+function handleFillInTheBlank(body: any): Answer {
+  const answer = body.answers.map((answer) => {
+    return answer.values[0];
+  });
+
+  return {
+    prompt: stripTags(body.prompt),
+    answer,
+    type: QuestionType.FILL_IN_THE_BLANK,
+    time: new Date().toISOString(),
+  };
 }
 
 function handleTrueFalse(body: any): Answer {

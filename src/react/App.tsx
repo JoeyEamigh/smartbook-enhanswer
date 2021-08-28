@@ -20,7 +20,7 @@ function App() {
       function (tabs) {
         const tab = tabs[0];
         const url = tab.url;
-        setUrl(url);
+        setUrl(url || '');
       }
     );
   }, []);
@@ -37,7 +37,7 @@ function App() {
   );
 
   function renderContent() {
-    if (url.includes('learning.mheducation.com')) {
+    if (url.includes('learning.mheducation.com') || url.includes('popup.html') || !url) {
       switch (mode) {
         case Mode.ANSWERS:
           return <Answers />;

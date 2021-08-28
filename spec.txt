@@ -1,0 +1,133 @@
+MULTIPLE_CHOICE
+{
+    "answer": "0",
+    "prompt": "<p>The planning function of management is characterized by</p>",
+    "random": true,
+    "choices": [
+        {
+            "key": "0",
+            "content": "<p>setting goals and deciding how to achieve them.</p>"
+        },
+        {
+            "key": "1",
+            "content": "<p>arranging tasks, people, and other resources to accomplish the work.</p>"
+        },
+        {
+            "key": "2",
+            "content": "<p>motivating, directing, and otherwise influencing people to work hard to achieve the organization's goals.</p>"
+        },
+        {
+            "key": "3",
+            "content": "<p>monitoring performance, comparing it with goals, and taking corrective action as needed.</p>"
+        }
+    ]
+}
+MULTIPLE_CHOICE_MULTI_SELECT
+{
+    "prompt": "<p>Which of the following are the rewards of studying management? (Check all that apply.)</p>",
+    "random": true,
+    "answers": [
+        "f88886d3-d1e6-4cb3-9ee2-3fc9a2e0b6ca",
+        "41641e78-23bb-470e-bd28-3bdb918f420d",
+        "e52a9736-47f5-4b89-be49-bc4255c243bb"
+    ],
+    "choices": [
+        {
+            "key": "f88886d3-d1e6-4cb3-9ee2-3fc9a2e0b6ca",
+            "content": "<p>Better understanding of how to relate to your supervisors wherever you work</p>"
+        },
+        {
+            "key": "41641e78-23bb-470e-bd28-3bdb918f420d",
+            "content": "<p>Increased insight into how to interact with your co-workers</p>"
+        },
+        {
+            "key": "e52a9736-47f5-4b89-be49-bc4255c243bb",
+            "content": "<p>Improved ability to manage yourself in the workplace</p>"
+        },
+        {
+            "key": "2818226c-d74c-4b86-907c-fc65897d1ba2",
+            "content": "<p>Guaranteed high pay in the field you are interested in</p>"
+        }
+    ]
+}
+TRUE_FALSE
+{
+    "answer": "false",
+    "prompt": "<p>True or false: Mintzberg's study of chief executives revealed that the majority of their workday involved speaking face-to-face with customers.</p>",
+    "trueRationale": "<p>This study showed that executives had non-stop days dealing with meetings, phone calls, and mail.</p>",
+    "falseRationale": ""
+}
+MATCHING
+{
+    "prompt": "<p>Given a company's accounting equation at the end of the accounting period consists of Assets of $100,000, Liabilities of $60,000 and Stockholders' Equity of $40,000, match the correct amount the following descriptions.</p>",
+    "answers": [
+        {
+            "prompt": "03d5e4cd-0234-4898-9df2-f99d8b264e97",
+            "choices": [
+                "039d6966-9478-43af-9c72-30601c2049f9"
+            ]
+        },
+        {
+            "prompt": "fda337ea-92ac-45fe-b765-831ae3e321aa",
+            "choices": [
+                "affb534d-3fbb-40ad-9af3-13a7704ae3a4"
+            ]
+        },
+        {
+            "prompt": "1d3bec5b-f06c-416a-8437-2ca5b322b426",
+            "choices": [
+                "2c36a099-a840-42d3-a121-81e7a44a7438"
+            ]
+        }
+    ],
+    "choices": [
+        {
+            "key": "039d6966-9478-43af-9c72-30601c2049f9",
+            "content": "<p>Economic resources owned</p>"
+        },
+        {
+            "key": "affb534d-3fbb-40ad-9af3-13a7704ae3a4",
+            "content": "<p>Creditors' claims to the economic resources</p>"
+        },
+        {
+            "key": "2c36a099-a840-42d3-a121-81e7a44a7438",
+            "content": "<p>Owners' claims to the economic resources </p>"
+        }
+    ],
+    "prompts": [
+        {
+            "key": "03d5e4cd-0234-4898-9df2-f99d8b264e97",
+            "content": "<p>Assets of $100,000</p>"
+        },
+        {
+            "key": "fda337ea-92ac-45fe-b765-831ae3e321aa",
+            "content": "<p>Liabilities of $60,000</p>"
+        },
+        {
+            "key": "1d3bec5b-f06c-416a-8437-2ca5b322b426",
+            "content": "<p>Stockholders' Equity of $40,000</p>"
+        }
+    ],
+    "randomize": true,
+    "maxChoices": null,
+    "metaBeforeChoices": true
+}
+FILL_IN_THE_BLANK
+{
+    "prompt": "<p>Events that do not involve exchanges between the company and someone else but affect assets, liabilities and/or stockholders' equity are called ${response:96309e41-328d-45fd-81ba-c8b82e2e45cc} events. (Enter one word per blank.)</p>",
+    "answers": [
+        {
+            "values": [
+                "internal"
+            ],
+            "response": "96309e41-328d-45fd-81ba-c8b82e2e45cc",
+            "rationale": [
+                ""
+            ]
+        }
+    ],
+    "inputFormat": "any",
+    "allowAnyOrder": false,
+    "caseSensitive": false,
+    "ignoreSpelling": true
+}
