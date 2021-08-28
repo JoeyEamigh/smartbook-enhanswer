@@ -3,7 +3,12 @@ body {
   margin: 0;
 
   height: 400px;
-  width: 600px;
+  width: 750px;
+
+  #root,
+  main.app {
+    max-height: 400px;
+  }
 }
 
 h1,

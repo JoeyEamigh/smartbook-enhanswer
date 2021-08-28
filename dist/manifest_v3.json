@@ -1,0 +1,39 @@
+{
+  "name": "TS/R/WP Chrome Extension",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Boilerplate for a Chrome extension with TypeScript, React, and Webpack.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Open the Control Panel"
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://learning.mheducation.com/*"
+      ],
+      "js": [
+        "./js/content.js"
+      ]
+    }
+  ],
+  "minimum_chrome_version": "93",
+  "background": {
+    "service_worker": "./js/background.js",
+    "type": "module"
+  }
+}

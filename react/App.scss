@@ -1,0 +1,46 @@
+@import "./_variables/variables";
+
+main.app {
+  @extend .d-flex, .flex-wrap, .justify-content-center, .mt-2;
+
+  section.header {
+    @extend .d-flex, .justify-content-center;
+    flex-basis: 100%;
+
+    span {
+      position: relative;
+      font-size: 28px;
+
+      code {
+        font-size: 14px;
+        position: absolute;
+        right: -36px;
+        top: 18px;
+      }
+    }
+  }
+
+  section.instruction {
+    @extend .d-flex, .flex-wrap, .justify-content-center, .mt-5, .mx-5, .text-center;
+
+    span {
+      font-size: 30px;
+    }
+  }
+
+  section.error {
+    @extend .d-flex, .flex-wrap, .justify-content-center, .mt-5, .mx-5, .text-center;
+
+    span.message {
+      font-size: 30px;
+    }
+
+    div.go-there {
+      @extend .mt-5, .w-100, .d-flex, .justify-content-center;
+
+      button {
+        @extend .btn, .btn-primary;
+      }
+    }
+  }
+}

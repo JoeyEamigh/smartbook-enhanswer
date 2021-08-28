@@ -1,0 +1,39 @@
+{
+  "name": "SmartBook 2.0 EnhAnswer",
+  "description": "A suite of tools to enhance your SmartBook 2.0 experience",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "icons/logo.png",
+    "default_title": "SmartBook 2.0 EnhAnswer",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/logo.png",
+    "48": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://learning.mheducation.com/*"
+      ],
+      "js": [
+        "./js/content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "./js/background.js"
+    ],
+    "persistent": true,
+    "type": "module"
+  }
+}

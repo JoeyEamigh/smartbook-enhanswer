@@ -1,0 +1,2 @@
+b build:
+	npx webpack
