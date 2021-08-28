@@ -1,14 +1,14 @@
 {
   "name": "smartbook-enhanswer",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "A suite of tools to enhance your SmartBook 2.0 experience",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "BSD-3-Clause",
+  "author": "Joey Eamigh",
+  "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.154",
     "@types/react": "^17.0.19",
