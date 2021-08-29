@@ -18,6 +18,24 @@ main.app {
         top: 18px;
       }
     }
+
+    .settings {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      color: white;
+
+      cursor: pointer;
+    }
+
+    .back {
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      color: white;
+
+      cursor: pointer;
+    }
   }
 
   section.instruction {
@@ -35,11 +53,11 @@ main.app {
       font-size: 30px;
     }
 
-    div.go-there {
+    div.buttons {
       @extend .mt-5, .w-100, .d-flex, .justify-content-center;
 
       button {
-        @extend .btn, .btn-primary;
+        @extend .btn, .btn-primary, .mx-3;
       }
     }
   }

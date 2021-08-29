@@ -1,6 +1,6 @@
 {
   "name": "smartbook-enhanswer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A suite of tools to enhance your SmartBook 2.0 experience",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
+    "akar-icons": "^1.8.11",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
     "buffer": "^6.0.3",

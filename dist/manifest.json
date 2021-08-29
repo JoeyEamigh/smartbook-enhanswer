@@ -1,7 +1,7 @@
 {
   "name": "SmartBook 2.0 EnhAnswer",
   "description": "A suite of tools to enhance your SmartBook 2.0 experience",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "manifest_version": 2,
   "browser_action": {
     "default_icon": "icons/logo.png",

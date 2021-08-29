@@ -297,6 +297,13 @@ ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+akar-icons@^1.8.11:
+  version "1.8.11"
+  resolved "https://registry.yarnpkg.com/akar-icons/-/akar-icons-1.8.11.tgz#4125ee228b91701f0388cb2ff81b2d2a138436fe"
+  integrity sha512-YUvDCd7MzrgL+R6thbaFN5VRCN6sUbsfaMZHgBlkveTzhkaGRGl88XamyBw4lahaMX3y7nCjh9yJAPyxkmbSmQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 ansi-styles@^4.1.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-4.3.0.tgz#edd803628ae71c04c85ae7a0906edad34b648937"

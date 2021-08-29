@@ -1,0 +1,40 @@
+@import "../../_variables/variables";
+
+main.answers {
+  @extend .d-flex, .flex-wrap, .justify-content-center, .w-100;
+
+  section.header {
+    span {
+      font-size: 24px;
+    }
+  }
+
+  section.instructions {
+    @extend .mx-5, .text-center;
+  }
+
+  hr {
+    @extend .w-100, .my-2, .mx-3;
+    color: white;
+  }
+
+  section.answers {
+    @extend .mx-5;
+
+    div {
+      @extend .d-flex, .flex-wrap, .mt-2;
+
+      span {
+        @extend .w-100;
+      }
+    }
+  }
+
+  div.buttons {
+    @extend .d-flex, .flex-wrap, .justify-content-center, .my-2, .w-100;
+
+    button {
+      @extend .btn, .btn-primary;
+    }
+  }
+}

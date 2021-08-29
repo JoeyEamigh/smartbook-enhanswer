@@ -3,4 +3,5 @@ export enum Mode {
   BROKEN = 'broken',
   REALLYBROKEN = 'reallyBroken',
   NONE = 'none',
+  SETTINGS = 'settings',
 }
